@@ -1,0 +1,16 @@
+{
+    "name": "ProfileSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:20ef7ab19b6a4324d840019d1c115a0a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
