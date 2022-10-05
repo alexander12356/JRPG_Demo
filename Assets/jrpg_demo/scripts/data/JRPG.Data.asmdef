@@ -1,5 +1,5 @@
 {
-    "name": "SystemAccess",
+    "name": "JRPG.Data",
     "rootNamespace": "",
     "references": [
         "GUID:8028f9701be35ba4996f01419db1dba1"

@@ -1,5 +1,5 @@
 {
-    "name": "ProfileSystem",
+    "name": "JRPG.BootManager",
     "rootNamespace": "",
     "references": [
         "GUID:20ef7ab19b6a4324d840019d1c115a0a",
