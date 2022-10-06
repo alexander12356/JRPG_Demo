@@ -1,10 +1,11 @@
 {
-    "name": "JRPG.BootManager",
+    "name": "JRPG.Installer",
     "rootNamespace": "",
     "references": [
         "GUID:20ef7ab19b6a4324d840019d1c115a0a",
-        "GUID:8028f9701be35ba4996f01419db1dba1",
-        "GUID:c4bff80cc0179784aa9c8b34680f9b44"
+        "GUID:50f88fa77ce6ac749a3d4fb7c18ea9a7",
+        "GUID:c4bff80cc0179784aa9c8b34680f9b44",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

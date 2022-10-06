@@ -8,7 +8,8 @@
         "Zenject-TestFramework",
         "JRPG.BootManager",
         "JRPG.SystemAccess",
-        "JRPG.DataAccess"
+        "JRPG.DataAccess",
+        "JRPG.SceneManager"
     ],
     "includePlatforms": [
         "Editor"

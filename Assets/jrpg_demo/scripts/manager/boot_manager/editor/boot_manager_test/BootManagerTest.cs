@@ -2,10 +2,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 using JRPG.Data.Profile;
+using JRPG.Data.Scene;
+using JRPG.Manager.Scene;
 using JRPG.System.Profile;
 
 using NSubstitute;
-using NSubstitute.Extensions;
 
 using NUnit.Framework;
 
@@ -18,6 +19,7 @@ namespace JRPG.Manager.Boot.Test
 	{
 		private BootManager _bootManager = null;
 		private IProfileSystem _profileSystem = null;
+		private ISceneManager _sceneManager = null;
 
 		[SetUp]
 		public override void Setup()
@@ -25,10 +27,14 @@ namespace JRPG.Manager.Boot.Test
 			base.Setup();
 
 			_profileSystem = Substitute.For<IProfileSystem>();
+			_sceneManager = Substitute.For<ISceneManager>();
+
 			Container.Bind<IProfileSystem>().FromInstance(_profileSystem);
+			Container.Bind<ISceneManager>().FromInstance(_sceneManager);
 
 			_bootManager = Substitute.ForPartsOf<BootManager>();
 			Container.Inject(_bootManager);
+			
 		}
 
 		[Test]
@@ -39,7 +45,6 @@ namespace JRPG.Manager.Boot.Test
 			{
 				_bootManager.ShowLoading();
 				_bootManager.LoadProfile();
-				_bootManager.LoadZenject();
 				_bootManager.LoadMainMenu();
 				_bootManager.HideLoading();
 			});
@@ -52,6 +57,13 @@ namespace JRPG.Manager.Boot.Test
 			_profileSystem.LoadProfileList().Returns(Task.FromResult(profileList));
 
 			Assert.AreEqual(profileList, _bootManager.LoadProfile().Result);
+		}
+
+		[Test]
+		public void Should_LoadLoadingScene_When_ShowLoading()
+		{
+			_bootManager.ShowLoading();
+			_sceneManager.Received().LoadScene(SceneEnumData.Loading);
 		}
 	}
 }
