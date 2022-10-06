@@ -12,7 +12,7 @@ using NUnit.Framework;
 
 using Zenject;
 
-namespace JRPG.Manager.Boot.Test
+namespace JRPG.Manager.Boot
 {
 	[TestFixture]
 	public class BootManagerTest : ZenjectUnitTestFixture
