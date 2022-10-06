@@ -26,16 +26,22 @@ namespace JRPG.Manager.Boot
 		public async void Boot()
 		{
 			Log("Start");
-			var loadingTask = ShowLoading();
-			Log("Start show loading");
-			await LoadProfile();
-			Log("Profile loaded");
-			await loadingTask;
-			Log("Complete show loading");
-			LoadMainMenu();
+
+			var loadLoadingScene = ShowLoading();
+			var loadingProfile = LoadProfile();
+			Log("Start load profile, loading scene");
+			await Task.WhenAll(loadLoadingScene, loadingProfile);
+			Log("Complete load profile, loading scene");
+			var mainMenuLoading = LoadMainMenu();
 			Log("Start load main menu");
-			HideLoading();
-			Log("Hide load main menu");
+			await mainMenuLoading;
+			Log("Complete load main menu");
+			var hideLoadingScene = HideLoading();
+			Log("Start hide loading scene");
+			await hideLoadingScene;
+			Log("Complete hide loading scene");
+
+			Log("Complete");
 		}
 
 		public virtual async Task<List<IProfileMarkData>> LoadProfile()
@@ -45,16 +51,20 @@ namespace JRPG.Manager.Boot
 
 		public virtual async Task<SceneEnumData> ShowLoading()
 		{
-			await _sceneManager.LoadScene(SceneEnumData.Loading);
-			return SceneEnumData.Loading;
+			await _sceneManager.LoadScene(SceneEnumData.loading);
+			return SceneEnumData.loading;
 		}
 
-		public virtual async void HideLoading()
+		public virtual async Task<SceneEnumData> HideLoading()
 		{
+			await _sceneManager.HideScene(SceneEnumData.loading);
+			return SceneEnumData.loading;
 		}
 
-		public virtual async void LoadMainMenu()
+		public virtual async Task<SceneEnumData> LoadMainMenu()
 		{
+			await _sceneManager.LoadScene(SceneEnumData.main_menu);
+			return SceneEnumData.main_menu;
 		}
 
 		private void Log(string text)

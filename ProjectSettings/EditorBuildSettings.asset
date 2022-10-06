@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/jrpg_demo/scenes/loading.unity
     guid: a0b428b544a1bc44e8d927b1f2663bac
+  - enabled: 1
+    path: Assets/jrpg_demo/scenes/main_menu.unity
+    guid: 8296c80ad92538540ab4eac8f845061f
   m_configObjects: {}

@@ -2,8 +2,7 @@
 {
 	public enum SceneEnumData
 	{
-		Loading,
-		Zenject,
-		MainMenu
+		loading,
+		main_menu
 	}
 }

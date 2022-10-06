@@ -63,7 +63,21 @@ namespace JRPG.Manager.Boot.Test
 		public void Should_LoadLoadingScene_When_ShowLoading()
 		{
 			_bootManager.ShowLoading();
-			_sceneManager.Received().LoadScene(SceneEnumData.Loading);
+			_sceneManager.Received().LoadScene(SceneEnumData.loading);
+		}
+
+		[Test]
+		public void Should_LoadMainMenuScene_When_LoadMainMenu()
+		{
+			_bootManager.LoadMainMenu();
+			_sceneManager.Received().LoadScene(SceneEnumData.main_menu);
+		}
+
+		[Test]
+		public void Should_HideLoadingScene_When_HideLoading()
+		{
+			_bootManager.HideLoading();
+			_sceneManager.Received().HideScene(SceneEnumData.loading);
 		}
 	}
 }

@@ -7,5 +7,6 @@ namespace JRPG.Manager.Scene
 	public interface ISceneManager
 	{
 		Task<SceneEnumData> LoadScene(SceneEnumData loading);
+		Task<SceneEnumData> HideScene(SceneEnumData loading);
 	}
 }
