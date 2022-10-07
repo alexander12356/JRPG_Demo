@@ -11,7 +11,7 @@ namespace JRPG.Controller.Scene
 	{
 		public async Task<SceneEnumData> LoadScene(SceneEnumData scene)
 		{
-			var op =  UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(scene.ToString().ToLower(), LoadSceneMode.Additive);
+			var op = SceneManager.LoadSceneAsync(scene.ToString().ToLower(), LoadSceneMode.Additive);
 
 			while (!op.isDone)
 			{
@@ -23,7 +23,7 @@ namespace JRPG.Controller.Scene
 
 		public async Task<SceneEnumData> HideScene(SceneEnumData scene)
 		{
-			var op = UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(scene.ToString().ToLower());
+			var op = SceneManager.UnloadSceneAsync(scene.ToString().ToLower());
 
 			while (!op.isDone)
 			{

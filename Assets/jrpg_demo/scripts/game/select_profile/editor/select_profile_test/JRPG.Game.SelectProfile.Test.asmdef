@@ -6,7 +6,9 @@
         "UnityEditor.TestRunner",
         "Zenject",
         "Zenject-TestFramework",
-        "JRPG.Game.SelectProfile"
+        "JRPG.Game.SelectProfile",
+        "JRPG.Controller.Scene",
+        "JRPG.Access.Data"
     ],
     "includePlatforms": [
         "Editor"
