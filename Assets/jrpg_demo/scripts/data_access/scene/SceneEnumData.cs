@@ -3,6 +3,7 @@
 	public enum SceneEnumData
 	{
 		loading,
-		main_menu
+		main_menu,
+		select_profile
 	}
 }

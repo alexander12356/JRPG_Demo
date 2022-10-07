@@ -1,7 +1,10 @@
 {
     "name": "JRPG.Game.MainMenu",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:c4bff80cc0179784aa9c8b34680f9b44",
+        "GUID:8028f9701be35ba4996f01419db1dba1"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

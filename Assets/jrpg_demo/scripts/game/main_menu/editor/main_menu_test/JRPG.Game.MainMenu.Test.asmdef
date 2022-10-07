@@ -6,7 +6,9 @@
         "UnityEditor.TestRunner",
         "Zenject",
         "Zenject-TestFramework",
-        "JRPG.Game.MainMenu"
+        "JRPG.Game.MainMenu",
+        "JRPG.SceneManager",
+        "JRPG.DataAccess"
     ],
     "includePlatforms": [
         "Editor"
