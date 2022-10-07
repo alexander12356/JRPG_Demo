@@ -5,9 +5,9 @@ using JRPG.Data.Scene;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace JRPG.Manager.Scene
+namespace JRPG.Controller.Scene
 {
-	public class SceneManager : MonoBehaviour, ISceneManager
+	public class SceneController : MonoBehaviour, ISceneController
 	{
 		public async Task<SceneEnumData> LoadScene(SceneEnumData scene)
 		{

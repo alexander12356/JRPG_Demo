@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using JRPG.Controller.Scene;
 using JRPG.Data.Profile;
 using JRPG.Data.Scene;
-using JRPG.Manager.Scene;
 using JRPG.System.Profile;
 
 using UnityEngine;
 
 using Zenject;
 
-namespace JRPG.Manager.Boot
+namespace JRPG.Controller.Boot
 {
-	public class BootManager : MonoBehaviour, IBootManager
+	public class BootController : MonoBehaviour, IBootController
 	{
 		[Inject] private IProfileSystem _profileSystem = null;
-		[Inject] private ISceneManager _sceneManager = null;
+		[Inject] private ISceneController _sceneController = null;
 
 		private void Start()
 		{
@@ -51,19 +50,19 @@ namespace JRPG.Manager.Boot
 
 		public virtual async Task<SceneEnumData> ShowLoading()
 		{
-			await _sceneManager.LoadScene(SceneEnumData.loading);
+			await _sceneController.LoadScene(SceneEnumData.loading);
 			return SceneEnumData.loading;
 		}
 
 		public virtual async Task<SceneEnumData> HideLoading()
 		{
-			await _sceneManager.HideScene(SceneEnumData.loading);
+			await _sceneController.HideScene(SceneEnumData.loading);
 			return SceneEnumData.loading;
 		}
 
 		public virtual async Task<SceneEnumData> LoadMainMenu()
 		{
-			await _sceneManager.LoadScene(SceneEnumData.main_menu);
+			await _sceneController.LoadScene(SceneEnumData.main_menu);
 			return SceneEnumData.main_menu;
 		}
 

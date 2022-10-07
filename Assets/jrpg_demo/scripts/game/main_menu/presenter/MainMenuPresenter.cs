@@ -1,6 +1,6 @@
-﻿using JRPG.Data.Scene;
+﻿using JRPG.Controller.Scene;
+using JRPG.Data.Scene;
 using JRPG.Game.MainMenu.View;
-using JRPG.Manager.Scene;
 
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace JRPG.Game.MainMenu.Presenter
 	public class MainMenuPresenter : MonoBehaviour, IMainMenuPresenter
 	{
 		[Inject] private IMainMenuView _mainMenuView = null;
-		[Inject] private ISceneManager _sceneManager = null;
+		[Inject] private ISceneController _sceneController = null;
 
 		public void Awake()
 		{
@@ -27,7 +27,7 @@ namespace JRPG.Game.MainMenu.Presenter
 
 		public void StartButtonPressHandler()
 		{
-			_sceneManager.LoadScene(SceneEnumData.select_profile);
+			_sceneController.LoadScene(SceneEnumData.select_profile);
 		}
 
 		public void ExitButtonPressHandler()

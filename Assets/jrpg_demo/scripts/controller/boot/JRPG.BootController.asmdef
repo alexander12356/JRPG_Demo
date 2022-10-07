@@ -1,8 +1,10 @@
 {
-    "name": "JRPG.SceneManager",
+    "name": "JRPG.BootController",
     "rootNamespace": "",
     "references": [
-        "GUID:8028f9701be35ba4996f01419db1dba1"
+        "GUID:20ef7ab19b6a4324d840019d1c115a0a",
+        "GUID:8028f9701be35ba4996f01419db1dba1",
+        "GUID:c4bff80cc0179784aa9c8b34680f9b44"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

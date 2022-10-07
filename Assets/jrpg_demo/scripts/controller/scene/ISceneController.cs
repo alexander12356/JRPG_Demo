@@ -2,9 +2,9 @@
 
 using JRPG.Data.Scene;
 
-namespace JRPG.Manager.Scene
+namespace JRPG.Controller.Scene
 {
-	public interface ISceneManager
+	public interface ISceneController
 	{
 		Task<SceneEnumData> LoadScene(SceneEnumData loading);
 		Task<SceneEnumData> HideScene(SceneEnumData loading);

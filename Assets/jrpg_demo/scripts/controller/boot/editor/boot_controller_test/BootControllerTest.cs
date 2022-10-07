@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using JRPG.Data.Profile;
 using JRPG.Data.Scene;
-using JRPG.Manager.Scene;
+using JRPG.Controller.Scene;
 using JRPG.System.Profile;
 
 using NSubstitute;
@@ -12,14 +12,14 @@ using NUnit.Framework;
 
 using Zenject;
 
-namespace JRPG.Manager.Boot
+namespace JRPG.Controller.Boot
 {
 	[TestFixture]
-	public class BootManagerTest : ZenjectUnitTestFixture
+	public class BootControllerTest : ZenjectUnitTestFixture
 	{
-		private BootManager _bootManager = null;
+		private BootController _bootController = null;
 		private IProfileSystem _profileSystem = null;
-		private ISceneManager _sceneManager = null;
+		private ISceneController _sceneController = null;
 
 		[SetUp]
 		public override void Setup()
@@ -27,26 +27,26 @@ namespace JRPG.Manager.Boot
 			base.Setup();
 
 			_profileSystem = Substitute.For<IProfileSystem>();
-			_sceneManager = Substitute.For<ISceneManager>();
+			_sceneController = Substitute.For<ISceneController>();
 
 			Container.Bind<IProfileSystem>().FromInstance(_profileSystem);
-			Container.Bind<ISceneManager>().FromInstance(_sceneManager);
+			Container.Bind<ISceneController>().FromInstance(_sceneController);
 
-			_bootManager = Substitute.ForPartsOf<BootManager>();
-			Container.Inject(_bootManager);
+			_bootController = Substitute.ForPartsOf<BootController>();
+			Container.Inject(_bootController);
 			
 		}
 
 		[Test]
 		public void Should_CallWithCorrectOrder_When_Boot()
 		{
-			_bootManager.Boot();
+			_bootController.Boot();
 			Received.InOrder(() =>
 			{
-				_bootManager.ShowLoading();
-				_bootManager.LoadProfile();
-				_bootManager.LoadMainMenu();
-				_bootManager.HideLoading();
+				_bootController.ShowLoading();
+				_bootController.LoadProfile();
+				_bootController.LoadMainMenu();
+				_bootController.HideLoading();
 			});
 		}
 
@@ -56,28 +56,28 @@ namespace JRPG.Manager.Boot
 			var profileList = new List<IProfileMarkData>();
 			_profileSystem.LoadProfileList().Returns(Task.FromResult(profileList));
 
-			Assert.AreEqual(profileList, _bootManager.LoadProfile().Result);
+			Assert.AreEqual(profileList, _bootController.LoadProfile().Result);
 		}
 
 		[Test]
 		public void Should_LoadLoadingScene_When_ShowLoading()
 		{
-			_bootManager.ShowLoading();
-			_sceneManager.Received().LoadScene(SceneEnumData.loading);
+			_bootController.ShowLoading();
+			_sceneController.Received().LoadScene(SceneEnumData.loading);
 		}
 
 		[Test]
 		public void Should_LoadMainMenuScene_When_LoadMainMenu()
 		{
-			_bootManager.LoadMainMenu();
-			_sceneManager.Received().LoadScene(SceneEnumData.main_menu);
+			_bootController.LoadMainMenu();
+			_sceneController.Received().LoadScene(SceneEnumData.main_menu);
 		}
 
 		[Test]
 		public void Should_HideLoadingScene_When_HideLoading()
 		{
-			_bootManager.HideLoading();
-			_sceneManager.Received().HideScene(SceneEnumData.loading);
+			_bootController.HideLoading();
+			_sceneController.Received().HideScene(SceneEnumData.loading);
 		}
 	}
 }

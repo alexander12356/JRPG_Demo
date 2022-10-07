@@ -1,4 +1,4 @@
-﻿using JRPG.Manager.Scene;
+﻿using JRPG.Controller.Scene;
 
 using UnityEngine;
 
@@ -8,11 +8,11 @@ namespace JRPG.Installer.Manager
 {
 	public class ManagerInstaller : MonoInstaller
 	{
-		[SerializeField] private SceneManager _sceneManager = null;
+		[SerializeField] private SceneController _sceneController = null;
 		
 		public override void InstallBindings()
 		{
-			Container.Bind<ISceneManager>().FromInstance(_sceneManager);
+			Container.Bind<ISceneController>().FromInstance(_sceneController);
 		}
 	}
 }

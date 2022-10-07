@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 65523249}
   m_Layer: 0
-  m_Name: System
+  m_Name: system
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 359398004}
   - component: {fileID: 359398005}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d56ccdcc981741a69e6b26aca64ec08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneManager: {fileID: 539741982}
+  _sceneController: {fileID: 539741982}
 --- !u!1 &539741980
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 539741981}
   - component: {fileID: 539741982}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: scene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590126316}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 634141130}
   - component: {fileID: 634141131}
   m_Layer: 0
-  m_Name: BootManager
+  m_Name: boot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832379754}
   m_Layer: 0
-  m_Name: Installer
+  m_Name: installer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1435029346}
   - component: {fileID: 1435029347}
   m_Layer: 0
-  m_Name: System
+  m_Name: system
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 1982949094}
   - component: {fileID: 1982949095}
   m_Layer: 0
-  m_Name: Profile
+  m_Name: profile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
