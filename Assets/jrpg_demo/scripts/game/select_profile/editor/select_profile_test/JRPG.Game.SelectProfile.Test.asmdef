@@ -1,14 +1,12 @@
 {
-    "name": "JRPG.Game.MainMenu.Test",
+    "name": "JRPG.Game.SelectProfile.Test",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Zenject",
         "Zenject-TestFramework",
-        "JRPG.Game.MainMenu",
-        "JRPG.Access.Data",
-        "JRPG.Controller.Scene"
+        "JRPG.Game.SelectProfile"
     ],
     "includePlatforms": [
         "Editor"
