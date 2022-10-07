@@ -7,8 +7,8 @@
         "Zenject",
         "Zenject-TestFramework",
         "JRPG.Game.MainMenu",
-        "JRPG.DataAccess",
-        "JRPG.SceneController"
+        "JRPG.Access.Data",
+        "JRPG.Controller.Scene"
     ],
     "includePlatforms": [
         "Editor"

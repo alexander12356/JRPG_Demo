@@ -1,7 +1,8 @@
 {
-    "name": "JRPG.SceneController",
+    "name": "JRPG.System.Profile",
     "rootNamespace": "",
     "references": [
+        "GUID:20ef7ab19b6a4324d840019d1c115a0a",
         "GUID:8028f9701be35ba4996f01419db1dba1"
     ],
     "includePlatforms": [],

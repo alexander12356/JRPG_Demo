@@ -1,15 +1,15 @@
 {
-    "name": "JRPG.BootController.Test",
+    "name": "JRPG.Controller.Boot.Test",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Zenject",
         "Zenject-TestFramework",
-        "JRPG.BootController",
-        "JRPG.SystemAccess",
-        "JRPG.DataAccess",
-        "JRPG.SceneController"
+        "JRPG.Controller.Boot",
+        "JRPG.Access.System",
+        "JRPG.Access.Data",
+        "JRPG.Controller.Scene"
     ],
     "includePlatforms": [
         "Editor"
